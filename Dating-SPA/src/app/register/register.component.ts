@@ -16,11 +16,9 @@ model :any = {};
   }
 
   register() {
-      return this.authservice.register(this.model).subscribe(()=>{}), 
-      error => {console.log('Error in registration');};
+      return this.authservice.register(this.model).subscribe(()=>{}, 
+      error => {console.log('Error in registration');})
       
-// tslint:disable-next-line: no-debugger
-    
   }
   cancel()
   {
