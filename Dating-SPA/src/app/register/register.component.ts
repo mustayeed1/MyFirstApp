@@ -17,7 +17,7 @@ model :any = {};
 
   register() {
       return this.authservice.register(this.model).subscribe(() => {},
-      error => {console.log('Error in registration'); });
+      error => {console.log(error); });
 
   }
   cancel() {
