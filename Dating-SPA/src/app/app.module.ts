@@ -52,6 +52,7 @@ export function tokenGetter(){
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
       NgxGalleryModule,
+      
       JwtModule.forRoot({
          config:{ tokenGetter: tokenGetter,
             whitelistedDomains:['localhost:5000'],
