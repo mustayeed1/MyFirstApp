@@ -41,5 +41,14 @@ namespace DatingApp.API.Data
            return  await _context.SaveChangesAsync() > 0 ? true: false;
             //throw new System.NotImplementedException();
         }
+
+        public async Task<Photo> GetPhoto(int id)
+        {
+            return await _context.Photos.FirstOrDefaultAsync(p=>p.Id == id);
+        }
+
+        public async Task<Photo>GetMainPhotoForUser(int id){
+            return await _context.Photos.FirstOrDefaultAsync(p=> p.UserId == id && p.IsMain == true);
+        }
     }
 }

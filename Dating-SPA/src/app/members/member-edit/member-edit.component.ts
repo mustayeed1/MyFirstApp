@@ -12,10 +12,10 @@ import { AuthService } from 'src/app/_services/auth.service';
   styleUrls: ['./member-edit.component.css']
 })
 export class MemberEditComponent implements OnInit {
-  @ViewChild('editForm') editForm: NgForm;
+  @ViewChild('editForm', {static: false}) editForm: NgForm;
   @HostListener('window:beforeunload',['$event'])
   unloadNotification($event:any){
-    if(this.editForm.dirty){
+    if(this.editForm.dirty) {
       return $event.returnValue = true;
     }
 
@@ -42,5 +42,8 @@ export class MemberEditComponent implements OnInit {
     console.log(this.user);
     
   }
-
+  updateMainPhoto(photoUrl)
+  {
+    this.user.photoUrl = photoUrl;
+  }
 }

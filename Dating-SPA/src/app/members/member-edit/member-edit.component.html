@@ -33,7 +33,7 @@
             <div>
               <strong>Member since:</strong>
               <p>
-                {{user.created}} 
+                {{user.created| date:'dd-MMM-yyyy'}} 
               </p>
             </div>
             <div class="card-footer">
@@ -67,7 +67,7 @@
               
             </tab>
             <tab heading="Edit Photos">
-             <p>Photo edit will go here</p>
+             <app-photo-editor [photos]="user.photos"  (getMemberPhotoChange)="updateMainPhoto($event)" ></app-photo-editor>
               
             </tab>
            
