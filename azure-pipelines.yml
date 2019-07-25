@@ -18,9 +18,7 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    pwd
-    ll
-    cd /Dating-SPA
+    dir
     ng build --prod
 
   displayName: 'npm install and build'
