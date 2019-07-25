@@ -18,7 +18,9 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
+    cd /Dating-SPA
     ng build --prod
+
   displayName: 'npm install and build'
 
 # Publish Artifacts
